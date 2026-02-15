@@ -27,7 +27,10 @@ function startDetection() {
 
         setInterval(async () => {
             const detections = await faceapi
-                .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions({ inputSize: 512 }))
+                .detectAllFaces(
+                    video,
+                    new faceapi.TinyFaceDetectorOptions({ inputSize: 512 })
+                )
                 .withFaceExpressions();
 
             if (detections.length > 0) {
@@ -37,10 +40,8 @@ function startDetection() {
                     expressions[a] > expressions[b] ? a : b
                 );
 
-                // Update emotion text
                 emotionBox.innerText = "Emotion: " + maxEmotion.toUpperCase();
 
-                // Add simple animation
                 emotionBox.classList.add('detected');
                 setTimeout(() => emotionBox.classList.remove('detected'), 300);
 
