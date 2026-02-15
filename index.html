@@ -9,74 +9,43 @@
     <script defer src="https://unpkg.com/face-api.js@0.22.2/dist/face-api.min.js"></script>
     <script defer src="script.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Orbitron', sans-serif;
-            overflow: hidden;
-            color: #00ffcc;
-            height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
             flex-direction: column;
-            background: black;
-        }
-
-        /* Robotic Animated Grid Background */
-        body::before {
-            content: "";
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background-image:
-                linear-gradient(#00ffcc22 1px, transparent 1px),
-                linear-gradient(90deg, #00ffcc22 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: moveGrid 10s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes moveGrid {
-            from {
-                transform: translate(0, 0);
-            }
-
-            to {
-                transform: translate(-50px, -50px);
-            }
+            color: white;
         }
 
         h1 {
             font-size: 36px;
-            margin-bottom: 5px;
-            text-shadow: 0 0 15px #00ffcc;
-        }
-
-        .authors {
-            font-size: 14px;
             margin-bottom: 20px;
-            color: #ffffffaa;
+            text-shadow: 2px 2px 8px #000000aa;
         }
 
         .card {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 0 40px #00ffcc;
+            box-shadow: 0 0 25px #00000088;
             display: flex;
             flex-direction: column;
             align-items: center;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
         }
 
         video {
             border-radius: 20px;
-            border: 3px solid #00ffcc;
-            box-shadow: 0 0 30px #00ffcc;
+            border: 5px solid #00ffcc;
+            box-shadow: 0 0 40px #00ffcc;
             max-width: 100%;
         }
 
@@ -86,16 +55,15 @@
             font-weight: bold;
             padding: 12px 25px;
             border-radius: 12px;
-            background: black;
-            border: 2px solid #00ffcc;
-            color: #00ffcc;
-            text-shadow: 0 0 10px #00ffcc;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            color: white;
+            text-shadow: 1px 1px 6px #000000aa;
             transition: all 0.3s ease-in-out;
         }
 
         #emotionBox.detected {
-            transform: scale(1.15);
-            box-shadow: 0 0 25px #00ffcc;
+            transform: scale(1.2);
+            box-shadow: 0 0 25px #ffffffaa;
         }
 
         @media(max-width: 700px) {
@@ -104,7 +72,8 @@
             }
 
             #emotionBox {
-                font-size: 22px;
+                font-size: 24px;
+                padding: 10px 20px;
             }
         }
     </style>
@@ -125,8 +94,3 @@
 </body>
 
 </html>
-
-
-
-
-
